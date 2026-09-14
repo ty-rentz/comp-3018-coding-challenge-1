@@ -1,6 +1,6 @@
 // Player interface
 
-interface Player {
+export interface Player {
     id: number;
     name: string;
     wins: number;
@@ -34,7 +34,7 @@ const players: Player[] = [
 
 // Finds player with matching ID
 
-const getPlayerById = (id: number): Player | null => {
+export const getPlayerById = (id: number): Player | null => {
     for (const player of players) {
         if (player.id === id) {
             return player;
@@ -44,7 +44,7 @@ const getPlayerById = (id: number): Player | null => {
     return null;
 };
 
-const calculatePerformanceRating = (player: Player): number => {
+export const calculatePerformanceRating = (player: Player): number => {
     const totalGames = player.wins + player.losses;
 
     if (totalGames === 0) {

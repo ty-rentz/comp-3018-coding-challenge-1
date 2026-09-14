@@ -1,5 +1,7 @@
 "use strict";
 // Player interface
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.calculatePerformanceRating = exports.getPlayerById = void 0;
 const players = [
     {
         id: 1,
@@ -32,6 +34,7 @@ const getPlayerById = (id) => {
     }
     return null;
 };
+exports.getPlayerById = getPlayerById;
 const calculatePerformanceRating = (player) => {
     const totalGames = player.wins + player.losses;
     if (totalGames === 0) {
@@ -41,3 +44,4 @@ const calculatePerformanceRating = (player) => {
         player.totalScore / totalGames;
     return Math.round(rating * 100) / 100;
 };
+exports.calculatePerformanceRating = calculatePerformanceRating;
